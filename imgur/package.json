@@ -5,6 +5,7 @@
   "dependencies": {
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-pure-grid": "^2.1.1",
     "react-scripts": "0.9.5"
   },
   "devDependencies": {},
