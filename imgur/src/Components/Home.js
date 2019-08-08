@@ -1,102 +1,116 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
+import Grid from '@material-ui/core/Grid';
+import Button from '@material-ui/core/Button';
+import Resize from './Resize';
+import Gif from './gif';
+import Header from './Add_header';
+import Footer from './Add_footer';
+import upload from './upload_imgur';
 
-import ButtonBase from '@material-ui/core/ButtonBase';
 
-import Upload from './Upload'
+import {
+    BrowserRouter as Router,
+    Link,
+    Route,
+    Switch
+  } from 'react-router-dom';
 
 const useStyles = makeStyles(theme => ({
-    root: {
-        flexGrow: 1,
-    },
+  root: {
+    flexGrow: 1,
+  },
+  paper: {
+    padding: theme.spacing(1),
+    textAlign: 'center',
+    color: theme.palette.text.secondary,
+  },
+  button : {
+      align: 'center',
+      padding: '5px',
+      
 
-    paper: {
-        padding: theme.spacing(1),
-        margin:'auto',
-        maxWidth: 10,
-    },
-
-    image: {
-        margin: '1%',
-        display: 'block',
-        maxWidth: '1%',
-        maxHeight: '',
-        
-        
-        
-    },
+  }
 }));
 
-export default function Complexgrid() {
-    const classes = useStyles();
+export default function CenteredGrid() {
+  const classes = useStyles();
 
-    return (
-        <div className={classes.root}>
-        <Paper className={classes.Paper}>
-        <center>
-        <Grid container>
-        <Grid container spacing={1}>
-
-        <div>
-        <Grid item >
-        <ButtonBase className={classes.image}>
-        <img className={classes.img} alt="complex" src="https://is3-ssl.mzstatic.com/image/thumb/Purple128/v4/1e/53/94/1e5394f4-e9a5-3dff-427f-a199ac5abdb3/AppIcon-1x_U007emarketing-85-220-0-3.png/320x0w.jpg" onClick={<Upload />}/>
-        </ButtonBase>
+  return (
+    <div className={classes.root}>
+      <Grid container spacing={1}>
         
-        </Grid>
-        </div>
-
-        <div>
-        <Grid item >
-        <ButtonBase className={classes.image}>
-        <img className={classes.img} alt="complex" src="https://cdn3.iconfinder.com/data/icons/linecons-layout/512/header_layout-512.png"/>
-        </ButtonBase>
-        </Grid>
-        </div>
-        </Grid>
-        
-        
-        <Grid container spacing={1}>
-        <div>
-        <Grid item >
-        <ButtonBase className={classes.image}>
-        <img className={classes.img} alt="complex" src="https://png.pngtree.com/svg/20170824/96c718089c.svg"/>
-        </ButtonBase>
-        </Grid>
-        </div>
-
-        <div>
-        <Grid item >
-        <ButtonBase className={classes.image}>
-        <img className={classes.img} alt="complex" src="https://i.gifer.com/MXwH.gif"/>
-        </ButtonBase>
-        </Grid>
-        </div>
+        <Grid item sm={6}>
+        <Router>
+        <Link to ="/resize">
+        <Button variant="outlined" color="primary" className={classes.button} >
+        Resize
+      </Button>
+      </Link>
+      </Router>
         </Grid>
 
-        <Grid container spacing={1}>
-        <Grid item >
-        <ButtonBase className={classes.image}>
-        <img className={classes.img} alt="complex" src="https://i.imgur.com/BcG5FtS.jpg"/>
-        </ButtonBase>
+        <Grid item sm={6}>
+        <Router>
+        <Link to ="/header">
+        <Button variant="outlined" color="primary" className={classes.button}>
+        Add Header
+      </Button>
+      </Link>
+      </Router>
         </Grid>
 
-        <Grid item >
-        <ButtonBase className={classes.image}>
-        <img className={classes.img} alt="complex" src="https://www.freeiconspng.com/uploads/art-gallery-icon-9.jpg"/>
-        </ButtonBase>
-        </Grid>
+        <Grid item sm={6}>
+        <Router>
+            <Link to="/footer">
+        <Button variant="outlined" color="primary" className={classes.button}>
+        Add Footer
+      </Button>
+      </Link>
+      </Router>
         </Grid>
 
+        <Grid item sm={6}>
+        <Router>
+            <Link to="/gif">
+        <Button variant="outlined" color="primary" className={classes.button}>
+        Make Gif
+      </Button>
+      </Link>
+      </Router>
         </Grid>
-        </center>
-        
 
+        <Grid item sm={6}>
+        <Router>
+        <Link to ="/upload">
+        <Button variant="outlined" color="primary" className={classes.button}>
+        Share on Imgur
+      </Button>
+      </Link>
+      </Router>
+        </Grid>
+        <Grid item sm={6}>
+        <a href="https://console.firebase.google.com/u/0/project/stackimgur/storage/stackimgur.appspot.com/files">
+        <Button variant="outlined" color="primary" className={classes.button}>
+        Gallery
+      </Button>
+      </a>
+        </Grid>
+       
+      </Grid>
 
-        
-        </Paper>
-        </div>
-    )
+      <div>
+          <Router>
+          <Switch>
+              <Route path="/resize" component={Resize}/>
+              <Route path="/gif" component={Gif} />
+              <Route path="/header" component={Header} />
+              <Route path="/footer" component={Footer} />
+              <Route path="/upload" component={upload} />
+          </Switch>
+          </Router>
+      </div>
+    </div>
+  );
 }
