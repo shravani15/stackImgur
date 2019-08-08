@@ -41,64 +41,65 @@ export default function CenteredGrid() {
     <div className={classes.root}>
       <Grid container spacing={1}>
         
-        <Grid item sm={6}>
+    <Grid item sm={6}>
         <Router>
-        <Link to ="/resize">
-        <Button variant="outlined" color="primary" className={classes.button} >
-        Resize
-      </Button>
-      </Link>
-      </Router>
-        </Grid>
+            <Link to ="/resize">
+                <Button variant="outlined" color="primary" className={classes.button} >
+                Resize
+                </Button>
+            </Link>
+        </Router>
+    </Grid>
 
-        <Grid item sm={6}>
+    <Grid item sm={6}>
         <Router>
-        <Link to ="/header">
-        <Button variant="outlined" color="primary" className={classes.button}>
-        Add Header
-      </Button>
-      </Link>
-      </Router>
-        </Grid>
+            <Link to ="/header">
+                <Button variant="outlined" color="primary" className={classes.button}>
+                Add Header
+                </Button>
+            </Link>
+        </Router>
+     </Grid>
 
-        <Grid item sm={6}>
+    <Grid item sm={6}>
         <Router>
             <Link to="/footer">
-        <Button variant="outlined" color="primary" className={classes.button}>
-        Add Footer
-      </Button>
-      </Link>
-      </Router>
-        </Grid>
+                <Button variant="outlined" color="primary" className={classes.button}>
+                Add Footer
+                </Button>
+            </Link>
+        </Router>
+    </Grid>
 
-        <Grid item sm={6}>
+    <Grid item sm={6}>
         <Router>
             <Link to="/gif">
-        <Button variant="outlined" color="primary" className={classes.button}>
-        Make Gif
-      </Button>
-      </Link>
-      </Router>
-        </Grid>
+                <Button variant="outlined" color="primary" className={classes.button}>
+                Make Gif
+                </Button>
+            </Link>
+        </Router>
+    </Grid>
 
-        <Grid item sm={6}>
+    <Grid item sm={6}>
         <Router>
-        <Link to ="/upload">
-        <Button variant="outlined" color="primary" className={classes.button}>
-        Share on Imgur
-      </Button>
-      </Link>
-      </Router>
-        </Grid>
-        <Grid item sm={6}>
+            <Link to ="/upload">
+                <Button variant="outlined" color="primary" className={classes.button}>
+                Share on Imgur
+                </Button>
+            </Link>
+        </Router>
+    </Grid>
+
+    <Grid item sm={6}>
         <a href="https://console.firebase.google.com/u/0/project/stackimgur/storage/stackimgur.appspot.com/files">
-        <Button variant="outlined" color="primary" className={classes.button}>
-        Gallery
-      </Button>
-      </a>
-        </Grid>
+            <Button variant="outlined" color="primary" className={classes.button}>
+            Gallery
+            </Button>
+        </a>
+    </Grid>
        
-      </Grid>
+ </Grid>
 
       <div>
           <Router>
